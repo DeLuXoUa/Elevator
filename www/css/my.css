@@ -1,0 +1,74 @@
+.ex_floor{
+    font-size: 60pt;
+    color: red;
+    position: absolute;
+    left: 570px;
+    top: 60px;
+}
+.inside_doors{
+    width: 364px;
+    height: 806px;
+    position: absolute;
+    left: 560px;
+    top: 61px;
+    overflow: hidden;
+}
+.touch_panel{
+    border: 1px solid red;
+    width: 81px;
+    height: 226px;
+    position: absolute;
+    left: 443px;
+    top: 296px;
+}
+.called{
+    cursor: pointer;
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    border-radius: 10px;
+    display: none;
+
+    /*display: block !important;*/
+}
+
+.bg_ylw{
+    background-color: yellow;
+}
+
+.out_called{
+    width: 16px;
+    height: 16px;
+    left: 12px;
+    top: 22px;
+}
+
+.in_called_1{
+    border: 3px solid yellow;
+    left: 27px;
+    top: 170px;
+}
+._left{
+    position: absolute;
+    left: 0px;
+}
+._right{
+    position: absolute;
+    right: 0px;
+}
+.call_panel{
+    width: 43px;
+    height: 61px;
+    position: absolute;
+    left: 730px;
+    top: 320px;
+    cursor: pointer;
+}
+.outside_doors{
+    width: 294px;
+    height: 505px;
+    position: absolute;
+    left: 783px;
+    top: 107px;
+    overflow: hidden
+}

@@ -174,7 +174,7 @@ abstract class core_class extends \library\main_class
 
     /**
      * Write to file.
-     * @param $param
+     * @param $param string
      */
     private function write($param)
     {
