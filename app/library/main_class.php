@@ -27,6 +27,10 @@ class main_class
         return self::$_instances[$callClass];
     }
 
+
+    /**
+     * Disable clone new & serialize
+     */
     final private function __clone()
     {
     }

@@ -11,7 +11,7 @@ class cabin_class extends \core\core_class {
      */
     public function touchPanel($key){
         if(is_int($key) && $key <= configItem('floors'))
-            $this->walkToFloor($key);
+            $this->updateFloorsStack($key);
         else
             throw new \Exception('Touch panel is broken!');
     }
