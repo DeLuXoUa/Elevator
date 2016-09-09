@@ -12,7 +12,7 @@ spl_autoload_register(function ($class) {
 
 try{
 
-    \cabin\cabin_class::instance()->touchPanel(5);
+//    \cabin\cabin_class::instance()->touchPanel(3);
 
     \cabin\cabin_class::instance()->run();
 }catch (Exception $e){
