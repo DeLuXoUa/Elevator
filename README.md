@@ -33,7 +33,7 @@ location / {<br>
 
 **Start work:**<br>
 
-If you user non graphic UI (gui = false in config.ini), you can use next methods:
+If you use non graphic UI (gui = false in config.ini), you can use next methods:
 <br><br>
 \cabin\cabin_class::instance()->touchPanel(3);<br>
 touchPanel(3) - use for add floor in stack from cabin interface. In example argument 3 is floor.
