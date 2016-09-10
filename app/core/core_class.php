@@ -21,7 +21,6 @@ abstract class core_class extends \library\main_class
         if (!$this->_run) {
 
             $this->_run = 1;
-
             set_time_limit(0);
 
             header('Content-Encoding: none;');
@@ -30,7 +29,6 @@ abstract class core_class extends \library\main_class
             ini_set('implicit_flush', true);
             ob_implicit_flush(true);
 
-            $i = 0;
             $this->chooseDirection(true, true);
             while (true) {
                 $this->checkDirection();
@@ -45,8 +43,6 @@ abstract class core_class extends \library\main_class
                 else
                     $this->_in_floor--;
 
-
-//                echo 'read: ' . $i++ . ' _ ';
                 echo 'Elevetor in ' . $this->_in_floor . ' floor' . "\r";
 
                 if (in_array($this->_in_floor, $this->_floors_stack)) {
@@ -65,6 +61,9 @@ abstract class core_class extends \library\main_class
         }
     }
 
+    /**
+     * Main method only for GUI.
+     */
     public function runGui(){
         if (!$this->_run) {
             $this->_run = 1;
@@ -92,8 +91,6 @@ abstract class core_class extends \library\main_class
                     $this->write('_stopped');
                     break;
                 }
-
-
                 sleep(configItem('lift_speed') * configItem('floor_height'));
             }
             $this->_run = 0;
@@ -227,6 +224,7 @@ abstract class core_class extends \library\main_class
     }
 
     /**
+     * Method for AJAX to get user information.
      * @param $name
      * @return string
      */

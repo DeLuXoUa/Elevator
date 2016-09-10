@@ -21,8 +21,9 @@ if (configItem('gui')) {
 
 } else {
     try {
-        \cabin\cabin_class::instance()->touchPanel(3);
-        \cabin\cabin_class::instance()->run();
+//        \cabin\cabin_class::instance()->touchPanel(3);
+//        \cabin\cabin_class::instance()->run();
+        \callpanel\call_class::instance()->callClick(4);
     } catch (Exception $e) {
         echo $e->getMessage();
     }

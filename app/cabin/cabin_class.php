@@ -16,8 +16,4 @@ class cabin_class extends \core\core_class {
             throw new \Exception('Touch panel is broken!');
     }
 
-    public function getFloor(){
-
-    }
-
 }
