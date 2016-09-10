@@ -14,7 +14,7 @@
     overflow: hidden;
 }
 .touch_panel{
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     width: 81px;
     height: 226px;
     position: absolute;
@@ -23,17 +23,23 @@
 }
 .called{
     cursor: pointer;
-    width: 19px;
-    height: 19px;
+    width: 17px;
+    height: 17px;
     position: absolute;
     border-radius: 10px;
-    display: none;
-
     /*display: block !important;*/
+}
+
+.d_n{
+    display: none;
 }
 
 .bg_ylw{
     background-color: yellow;
+}
+
+.ylw_crl{
+    border: 3px solid yellow;
 }
 
 .out_called{
@@ -44,10 +50,62 @@
 }
 
 .in_called_1{
-    border: 3px solid yellow;
-    left: 27px;
-    top: 170px;
+    left: 29px;
+    top: 172px;
 }
+.in_called_2{
+    left: 14px;
+    top: 144px;
+}
+.in_called_3{
+    left: 43px;
+    top: 144px;
+}
+.in_called_4{
+    left: 14px;
+    top: 117px;
+}
+.in_called_5{
+     left: 43px;
+     top: 117px;
+ }
+.in_called_6{
+    left: 14px;
+    top: 90px;
+}
+.in_called_7{
+    left: 44px;
+    top: 89px;
+}
+.in_called_8{
+    left: 14px;
+    top: 62px;
+}
+.in_called_9{
+    left: 44px;
+    top: 62px;
+}
+.in_called_10{
+    left: 14px;
+    top: 33px;
+}
+.in_called_11{
+    left: 44px;
+    top: 33px;
+}
+.in_called_12{
+    left: 14px;
+    top: 6px;
+}
+.in_called_14{
+    left: 44px;
+    top: 6px;
+}
+.in_called_call{
+    left: 29px;
+    top: 199px;
+}
+
 ._left{
     position: absolute;
     left: 0px;
@@ -71,4 +129,52 @@
     left: 783px;
     top: 107px;
     overflow: hidden
+}
+.arrows{
+    position: absolute;
+    width: 29px;
+    height: 80px;
+    left: 943px;
+    top: 118px;
+}
+
+.arrow_up{
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 27px solid #0030ff;
+    left: 8px;
+    top: 5px;
+    position: absolute;
+    display: none;
+}
+
+.arrow_down{
+    width: 1px;
+    height: 1px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 27px solid #0030ff;
+    left: 8px;
+    top: 47px;
+    position: absolute;
+    display: none;
+}
+
+.display{
+    width: 70px;
+    height: 40px;
+    position: absolute;
+    left: 892px;
+    top: 50px;
+    border: 1px solid red;
+    background-color: #000;
+}
+
+.display_text{
+    color: red;
+    font-size: 30pt;
+    left: 13px;
+    position: absolute;
 }

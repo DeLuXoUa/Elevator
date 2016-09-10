@@ -11,6 +11,7 @@ class main_class
     private static $_instances = [];
 
     /**
+     * @return \cabin\ajax_class
      * @return \cabin\cabin_class
      * @return \core\core_class
      */

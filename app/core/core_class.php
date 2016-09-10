@@ -10,12 +10,13 @@ abstract class core_class extends \library\main_class
     private $_direction; // 1-up 0-down
     private $_floors_stack = [];
     private $_run = 0;
+    private $_stopped = 0;
 
 
     /**
      * Main method. Calculate floors. Without gui.
      */
-    public function run()
+    final public function run()
     {
         if (!$this->_run) {
 
@@ -34,7 +35,7 @@ abstract class core_class extends \library\main_class
             while (true) {
                 $this->checkDirection();
 
-                if (!$this->_run){
+                if (!$this->_run) {
                     $this->stop();
                     break;
                 }
@@ -64,17 +65,55 @@ abstract class core_class extends \library\main_class
         }
     }
 
+    public function runGui(){
+        if (!$this->_run) {
+            $this->_run = 1;
+            $this->_stopped = 0;
+            $this->write('_stopped');
+            $this->chooseDirection(true, true);
+            while (true) {
+                $this->checkDirection();
+
+                if (!$this->_run) {
+                    $this->stop();
+                    break;
+                }
+
+                if ($this->_direction)
+                    $this->_in_floor++;
+                else
+                    $this->_in_floor--;
+
+                $this->write('_in_floor');
+
+                if (in_array($this->_in_floor, $this->_floors_stack)) {
+                    $this->removeFloorFromStack($this->_in_floor);
+                    $this->_stopped = 1;
+                    $this->write('_stopped');
+                    break;
+                }
+
+
+                sleep(configItem('lift_speed') * configItem('floor_height'));
+            }
+            $this->_run = 0;
+            $this->_stopped = 1;
+            $this->write('_stopped');
+        }
+    }
+
 
     /**
      * Method for check correct direction.
      */
-    private function checkDirection(){
+    private function checkDirection()
+    {
         if ($this->_in_floor >= configItem('floors') ||
             $this->_in_floor <= 1 ||
             $this->_in_floor >= end($this->_floors_stack) ||
             $this->_in_floor <= reset($this->_floors_stack)
         ) {
-            $this->chooseDirection(true,true);
+            $this->chooseDirection(true, true);
         }
     }
 
@@ -100,6 +139,7 @@ abstract class core_class extends \library\main_class
     {
         $direction = NULL;
         if ($updateFromFile) {
+            $this->read('_stopped');
             $this->read('_in_floor');
             $this->read('_floors_stack');
         }
@@ -140,7 +180,7 @@ abstract class core_class extends \library\main_class
 
     private function removeFloorFromStack($floor)
     {
-        $key = array_search($floor,$this->_floors_stack);
+        $key = array_search($floor, $this->_floors_stack);
         unset($this->_floors_stack[$key]);
         $this->write('_floors_stack');
     }
@@ -180,10 +220,22 @@ abstract class core_class extends \library\main_class
     {
         $value = $this->{$param};
 
-        if(is_array($this->{$param}))
+        if (is_array($this->{$param}))
             $value = array_values($this->{$param});
 
         file_put_contents(TMP . DIRECTORY_SEPARATOR . configItem($param), json_encode($value));
+    }
+
+    /**
+     * @param $name
+     * @return string
+     */
+    protected function getParam($name)
+    {
+        if (isset($this->{$name})) {
+            return $this->{$name};
+        } else
+            return null;
     }
 
 }
