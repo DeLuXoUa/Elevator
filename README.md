@@ -50,3 +50,5 @@ run() - methods to start moving of elevator according to call stack.
 
 
 ---
+
+<img src="https://raw.githubusercontent.com/DeLuXoUa/Elevator/master/www/img/class_diagram.png"/>
