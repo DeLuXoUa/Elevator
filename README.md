@@ -1,9 +1,9 @@
 # Elevator test work.
 
 **Setup:**<br>
-First you need get rights to write folder 'tmp' on root of project; Easy way is 'chmod 777 ./tmp' from you console.
+First you need to get rights to write folder 'tmp' on root of project; Easy way is 'chmod 777 ./tmp' from you console.
 Please edit your web server config, and change root directory to /path/you/server/elevator/www.<br>
-Add www on end of line server root.<br><br><br>
+Add 'www' on the end of the line server root.<br><br><br>
 Nginx config sample:<br>
 
 
@@ -36,17 +36,17 @@ location / {<br>
 If you use non graphic UI (gui = false in config.ini), you can use next methods:
 <br><br>
 \cabin\cabin_class::instance()->touchPanel(3);<br>
-touchPanel(3) - use for add floor in stack from cabin interface. In example argument 3 is floor.
+touchPanel(3) - use for adding of the floor in stack from cabin interface. For example argument 3 is floor.
 <br><br>
 
 \callpanel\call_class::instance()->callClick(4);<br>
-callClick(4) - use for outside elevator call. In example 4 - is floor from which cause.
+callClick(4) - use for outside elevator call. For example 4 - is floor which has been chosen.
 
 
 <br><br>
 \cabin\cabin_class::instance()->run();<br>
 \callpanel\call_class::instance()->run();<br>
-run() - methods to start elevator move according to call stack.
+run() - methods to start moving of elevator according to call stack.
 
 
 ---
