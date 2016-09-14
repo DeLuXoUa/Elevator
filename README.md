@@ -29,7 +29,12 @@ location / {<br>
 
 }
 
-
+or apache:
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.host.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.host.com$
+RewriteCond %{REQUEST_URI} !www/
+RewriteRule (.*) /www/$1 [L]
 
 **Start work:**<br>
 
